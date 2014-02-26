@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <iostream>
+#include <bitset>
+#include <climits>
 
 using namespace std;
 
@@ -27,8 +27,9 @@ int main()
     cout << "You input " << input_ascii << endl;
 
     for(char& c : input_ascii){
-        cout << ascii_to_bcd(c) + 10 << " ";
+        cout << (bitset<8>) ascii_to_bcd(c) << " ";
     }
+    
     cout << endl;
 
 	return 0;

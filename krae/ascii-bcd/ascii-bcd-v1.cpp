@@ -19,17 +19,6 @@ int ascii_to_bcd(char c){
     }
 }
 
-void print_bcd(string input_ascii){
-    for(char& c : input_ascii){
-        if(&c == "-" || &c == "."){
-            //TODO
-        }
-        else{
-            cout << (bitset<8>) ascii_to_bcd(c) << " ";
-        }
-    }
-}
-
 int main()
 {
 	string input_ascii;
@@ -38,7 +27,10 @@ int main()
     cin >> input_ascii;
     cout << "You input " << input_ascii << endl;
 
-    print_bcd(input_ascii);
+    for(char& c : input_ascii){
+        cout << (bitset<8>) ascii_to_bcd(c) << " ";
+    }
+    
     cout << endl;
 
 	return 0;

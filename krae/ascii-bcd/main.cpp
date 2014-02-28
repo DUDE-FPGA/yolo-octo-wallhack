@@ -12,19 +12,29 @@ int ascii_to_bcd(char c){
 
 //Takes ascii string input and outputs BCD
 void print_bcd(string input_ascii){
+    int i = 0;
+    //If these == 1, means symbol found
+    bool dot = 0;
+    bool sign = 0;
     for(char& c : input_ascii){
         if(c == '-'){
             cout << "NEGATIVE ";
+            sign = 1;
         }
         else if(c == '.'){
+            dot = 1;
             cout << "DOT ";
         }
         else{
+            if(dot)i++;
+            
             cout << (bitset<8>) ascii_to_bcd(c) << " ";
         }
     }
+    cout << "Sign: " << sign <<  " Exponent: " << (bitset<8>) (127 - i) << endl;
 }
 
+//Conversion to float
 float to_float(string input_ascii){
     int i = 0;
     int num = 0;
@@ -32,7 +42,6 @@ float to_float(string input_ascii){
     //cout << "String length: " << input_ascii.length() << endl;
     int ascii_len = input_ascii.length() - 1;
     for(char& c : input_ascii){
-        //cout << ascii_to_bcd(c) << " ";
         num += ascii_to_bcd(c) * pow(10,ascii_len - i);
         i++;
     }
@@ -49,10 +58,10 @@ int main()
     cout << "You input " << input_ascii << endl;
 
     //Outputs
-    cout << "Decimal value: " << to_float(input_ascii) << endl;
+    //cout << "Decimal value: " << to_float(input_ascii) << endl;
     print_bcd(input_ascii);
     cout << endl;
-    cout << (bitset<24>) to_float(input_ascii) << endl;
+    //cout << (bitset<23>) to_float(input_ascii) << endl;
     //cout << print_bcd(input_ascii);
     cout << endl;
 

@@ -37,13 +37,20 @@ void print_bcd(string input_ascii){
 //Conversion to float
 float to_float(string input_ascii){
     int i = 0;
+    int j = 0;
+    int sign = 0;
+    int dot = 0;
     int num = 0;
-    int decimal = 0;
     //cout << "String length: " << input_ascii.length() << endl;
     int ascii_len = input_ascii.length() - 1;
     for(char& c : input_ascii){
-        num += ascii_to_bcd(c) * pow(10,ascii_len - i);
-        i++;
+        if(c == '-') sign = 0b10000000;
+        else if(c == '.') dot = 1;
+        else {
+            num += ascii_to_bcd(c) * pow(10,ascii_len - i);
+            i++;
+            if(dot) j++;
+        }
     }
     return num;
 }
@@ -62,7 +69,7 @@ int main()
     print_bcd(input_ascii);
     cout << endl;
     //cout << (bitset<23>) to_float(input_ascii) << endl;
-    //cout << print_bcd(input_ascii);
+    cout << to_float(input_ascii) << endl;
     cout << endl;
 
 	return 0;

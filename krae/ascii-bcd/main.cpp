@@ -1,6 +1,7 @@
 #include <iostream>
 #include <bitset>
 #include <climits>
+#include <string.h>
 
 using namespace std;
 
@@ -21,8 +22,11 @@ int ascii_to_bcd(char c){
 
 void print_bcd(string input_ascii){
     for(char& c : input_ascii){
-        if(&c == "-" || &c == "."){
-            //TODO
+        if(c == '-'){
+            cout << "NEGATIVE ";
+        }
+        else if(c == '.'){
+            cout << "DOT ";
         }
         else{
             cout << (bitset<8>) ascii_to_bcd(c) << " ";

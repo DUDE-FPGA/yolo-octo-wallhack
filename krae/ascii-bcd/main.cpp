@@ -1,25 +1,16 @@
 #include <iostream>
 #include <bitset>
 #include <climits>
-#include <string.h>
+#include <math.h>
 
 using namespace std;
 
 //Takes a single ascii number character and converts to BCD
 int ascii_to_bcd(char c){
-    switch(c){
-        case 0b110001: return 0b0001;
-        case 0b110010: return 0b0010;
-        case 0b110011: return 0b0011;
-        case 0b110100: return 0b0100;
-        case 0b110101: return 0b0101;
-        case 0b110110: return 0b0110;
-        case 0b110111: return 0b0111;
-        case 0b111000: return 0b1000;
-        case 0b111001: return 0b1001;
-    }
+    return c - 48;
 }
 
+//Takes ascii string input and outputs BCD
 void print_bcd(string input_ascii){
     for(char& c : input_ascii){
         if(c == '-'){
@@ -34,6 +25,19 @@ void print_bcd(string input_ascii){
     }
 }
 
+float to_float(string input_ascii){
+    int i = 0;
+    int num = 0;
+    cout << "String length: " << input_ascii.length() << endl;
+    int ascii_len = input_ascii.length() - 1;
+    for(char& c : input_ascii){
+        //cout << ascii_to_bcd(c) << " ";
+        num += ascii_to_bcd(c) * pow(10,ascii_len - i);
+        i++;
+    }
+    return num;
+}
+
 int main()
 {
 	string input_ascii;
@@ -42,7 +46,8 @@ int main()
     cin >> input_ascii;
     cout << "You input " << input_ascii << endl;
 
-    print_bcd(input_ascii);
+    //print_bcd(input_ascii);
+    cout << to_float(input_ascii);
     cout << endl;
 
 	return 0;

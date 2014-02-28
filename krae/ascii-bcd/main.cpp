@@ -45,7 +45,7 @@ int get_ascii_len(string input_ascii){
 }
 
 //Conversion to float
-float to_float(string input_ascii){
+int to_float(string input_ascii){
     int i = 0;
     int j = 0;
     int sign = 0;
@@ -54,7 +54,7 @@ float to_float(string input_ascii){
     int exponent = 0;
      
     for(char& c : input_ascii){
-        if(c == '-') sign = 0b100000000;
+        if(c == '-') sign = 256;
         else if(c == '.') dot = 1;
         else {
             num += ascii_to_bcd(c) * pow(10,get_ascii_len(input_ascii) - i);
@@ -62,9 +62,12 @@ float to_float(string input_ascii){
             if(dot) j++;
         }
     }
-    cout << "Sign: " << (bitset<9>) sign << " Exponent: " << (bitset<8>) (127 - j) << endl;
-    cout << "Exponent byte: " << (bitset<32>) ((sign + 127 - j) * pow(23,2)) << endl;
-    num += (sign + 127 - j) * pow(2,23); 
+	exponent = ((sign + 127 - j) << 23);
+    cout << "Sign: " << (bitset<9>) sign << " Exponent: " << (bitset<32>) exponent << endl;
+	cout << "Converted num: " << num << " Binary: " << 
+		(bitset<32>) num << endl;
+	cout << "Mantissa + Exponent: " << (bitset<32>) (num + exponent) << endl;
+	num = num + exponent;
     return num;
 }
 
@@ -84,6 +87,7 @@ int main()
     //cout << (bitset<23>) to_float(input_ascii) << endl;
     cout << (bitset<32>) to_float(input_ascii) << endl;
     cout << endl;
+	cin >> i;
 
 	return 0;
 }

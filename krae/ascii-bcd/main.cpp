@@ -28,7 +28,8 @@ void print_bcd(string input_ascii){
 float to_float(string input_ascii){
     int i = 0;
     int num = 0;
-    cout << "String length: " << input_ascii.length() << endl;
+    int decimal = 0;
+    //cout << "String length: " << input_ascii.length() << endl;
     int ascii_len = input_ascii.length() - 1;
     for(char& c : input_ascii){
         //cout << ascii_to_bcd(c) << " ";
@@ -42,12 +43,17 @@ int main()
 {
 	string input_ascii;
     int i = 0;
+    //Input value
     cout << "Input ascii" << endl;
     cin >> input_ascii;
     cout << "You input " << input_ascii << endl;
 
-    //print_bcd(input_ascii);
-    cout << to_float(input_ascii);
+    //Outputs
+    cout << "Decimal value: " << to_float(input_ascii) << endl;
+    print_bcd(input_ascii);
+    cout << endl;
+    cout << (bitset<24>) to_float(input_ascii) << endl;
+    //cout << print_bcd(input_ascii);
     cout << endl;
 
 	return 0;

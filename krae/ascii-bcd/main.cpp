@@ -19,9 +19,11 @@ void print_bcd(string input_ascii){
     for(char& c : input_ascii){
         if(c == '-'){
             cout << "NEGATIVE ";
+            sign = 1;
         }
         else if(c == '.'){
             cout << "DOT ";
+            dot = 1;
         }
         else{
             if(dot)i++;

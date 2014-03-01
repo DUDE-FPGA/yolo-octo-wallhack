@@ -14,8 +14,6 @@ int ascii_to_bcd(char c){
 void print_bcd(string input_ascii){
     int i = 0;
     //If these == 1, means symbol found
-    bool dot = 0;
-    bool sign = 0;
     for(char& c : input_ascii){
         if(c == '-'){
             cout << "NEGATIVE ";
@@ -25,7 +23,6 @@ void print_bcd(string input_ascii){
         }
         else{
             if(dot)i++;
-            
             cout << (bitset<8>) ascii_to_bcd(c) << " ";
         }
     }

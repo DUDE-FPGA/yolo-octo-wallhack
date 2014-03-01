@@ -13,6 +13,8 @@ int ascii_to_bcd(char c){
 //Takes ascii string input and outputs BCD
 void print_bcd(string input_ascii){
     int i = 0;
+    int sign = 0;
+    int dot = 0;
     //If these == 1, means symbol found
     for(char& c : input_ascii){
         if(c == '-'){

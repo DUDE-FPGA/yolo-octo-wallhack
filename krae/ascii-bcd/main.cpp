@@ -62,7 +62,9 @@ int to_float(string input_ascii){
         if(c == '-') sign = 256;
         else if(c == '.') dot = 1;
         else {
-            num += ascii_to_bcd(c) * pow(10,get_ascii_len(input_ascii) - i);
+            //num += ascii_to_bcd(c) * pow(10,get_ascii_len(input_ascii) - i);
+            //TODO Binary logic multiplication
+            num += ascii_to_bcd(c) << 3 + ascii_to_bcd(c) << 1;
             i++;
             if(dot) j++;
         }
@@ -81,6 +83,11 @@ int to_float(string input_ascii){
     //Calculates final FP32 value1
 	num += exponent;
     return num;
+}
+
+//Multiply 2 mumbers without * operator
+int multiply(a,b){
+    //
 }
 
 int main()

@@ -86,8 +86,22 @@ int to_float(string input_ascii){
 }
 
 //Multiply 2 mumbers without * operator
-int multiply(a,b){
+int multiply(int a, int b){
     //
+}
+
+//Conver an int to FP32 format
+void intBitsToFloat(int bits){
+    int s = ((bits >> 31) == 0) ? 1: -1;
+    int e = ((bits >> 23) & 0xff);
+    int m = (e == 0) ?
+        ((bits & 0x7fffff) << 1 ):
+        ((bits & 0x7fffff) | 0x80000);
+
+    cout << "s: " << s << " e: " << e << " m: " << m << endl;
+    cout << "FP32: " << (bitset<1>) s << (bitset<8>) e << (bitset<23>) m << endl;
+    cout << "Your number: " << s * m * (2 << (127 - e)) << endl;
+
 }
 
 int main()
@@ -105,6 +119,7 @@ int main()
     cout << "FP32 output: " << (bitset<32>) to_float(input_ascii) << endl;
     cout << endl;
 	//cin >> i;
+    intBitsToFloat(1);
 
 	return 0;
 }

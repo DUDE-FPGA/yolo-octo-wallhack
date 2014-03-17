@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/James Donnellan/Documents/GitHub/yolo-octo-wallhack/eq2/eq_testbench_isim_beh.exe" -prj "C:/Users/James Donnellan/Documents/GitHub/yolo-octo-wallhack/eq2/eq_testbench_beh.prj" "work.eq_testbench" 

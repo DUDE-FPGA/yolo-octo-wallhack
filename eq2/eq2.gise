@@ -73,9 +73,10 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/eq2_synthesis.nlf"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/eq2_synthesis.vhd"/>
+    <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/eq2_synthesis.nlf"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/eq2_synthesis.vhd"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -89,6 +90,7 @@
     </transform>
     <transform xil_pn:end_ts="1395092356" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1395092356">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1395094865" xil_pn:in_ck="6972758559716040276" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1395094865">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -119,21 +121,25 @@
     <transform xil_pn:end_ts="1395094876" xil_pn:in_ck="6972758559716040276" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1324550117606546858" xil_pn:start_ts="1395094869">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <outfile xil_pn:name="eq_testbench_beh.prj"/>
       <outfile xil_pn:name="eq_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1395094876" xil_pn:in_ck="-4723244359533893628" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8092510645365963709" xil_pn:start_ts="1395094876">
+    <transform xil_pn:end_ts="1395137983" xil_pn:in_ck="-4723244359533893628" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8092510645365963709" xil_pn:start_ts="1395137982">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="eq_testbench_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1395091538" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1395091538">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1395091538" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1003494547438250324" xil_pn:start_ts="1395091538">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -162,6 +168,7 @@
     <transform xil_pn:end_ts="1395091547" xil_pn:in_ck="-5284239398477479217" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="6612229031860341258" xil_pn:start_ts="1395091538">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
@@ -185,6 +192,7 @@
     <transform xil_pn:end_ts="1395094057" xil_pn:in_ck="134921636718" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5970506996924280780" xil_pn:start_ts="1395094050">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="eq2.bld"/>
@@ -194,6 +202,7 @@
     <transform xil_pn:end_ts="1395094066" xil_pn:in_ck="134921636719" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-684010993939208968" xil_pn:start_ts="1395094057">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="eq2.pcf"/>
       <outfile xil_pn:name="eq2_map.map"/>
@@ -207,6 +216,7 @@
     <transform xil_pn:end_ts="1395094075" xil_pn:in_ck="160008489132866056" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3333849164707216606" xil_pn:start_ts="1395094066">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="eq2.ncd"/>
       <outfile xil_pn:name="eq2.pad"/>
@@ -221,6 +231,7 @@
     <transform xil_pn:end_ts="1395094075" xil_pn:in_ck="134921636587" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1395094072">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="eq2.twr"/>
       <outfile xil_pn:name="eq2.twx"/>
@@ -228,6 +239,7 @@
     <transform xil_pn:end_ts="1395091551" xil_pn:in_ck="134921636718" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="194848198080898380" xil_pn:start_ts="1395091547">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="netgen"/>
       <outfile xil_pn:name="netgen/synthesis/eq2_synthesis.nlf"/>
       <outfile xil_pn:name="netgen/synthesis/eq2_synthesis.vhd"/>

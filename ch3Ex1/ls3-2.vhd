@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    21:13:30 03/14/2014 
+-- Create Date:    22:44:05 03/18/2014 
 -- Design Name: 
--- Module Name:    eq1 - sop_arch 
+-- Module Name:    ls3-2 - cond_arch 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -18,8 +18,7 @@
 --
 ----------------------------------------------------------------------------------
 library IEEE;
-use ieee.numeric_std.all;
-use ieee.std_logic_1164.all;
+use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -30,20 +29,18 @@ use ieee.std_logic_1164.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity eq1 is
-    port(
-		i0, i1: in std_logic;
-		eq: out std_logic
-		);
-end eq1;
+entity decoder_2_4 is
+    Port ( a : in  std_logic_vector(1 downto 0);
+           en : in  STD_LOGIC;
+           y : out  std_logic_vector(3 downto 0));
+end decoder_2_4;
 
-architecture sop_arch of eq1 is
-	signal p0, p1: std_logic;
+architecture cond_arch of decoder_2_4 is
 begin
-	-- sum of two product terms
-	eq <= p0 or p1;
-	-- product terms
-	p0 <= (not i0) and (not i1);
-	p1 <= i0 and i1;
-end sop_arch;
+	 y <= "0000" when (en='0') else
+			"0001" when (a="00") else
+			"0010" when (a="01") else
+			"0100" when (a="10") else
+			"1000" -- a="11"
+end cond_arch;
 

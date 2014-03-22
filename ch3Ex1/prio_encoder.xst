@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/James Donnellan/Documents/GitHub/yolo-octo-wallhack/ch3Ex1/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/James Donnellan/Documents/GitHub/yolo-octo-wallhack/ch3Ex1/xst"
+elaborate
+-ifn prio_encoder.prj
+-ifmt mixed

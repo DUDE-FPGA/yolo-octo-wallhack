@@ -35,12 +35,12 @@ entity decoder_2_4 is
            y : out  std_logic_vector(3 downto 0));
 end decoder_2_4;
 
-architecture cond_arch of decoder_2_4 is
+architecture cond_arch32 of decoder_2_4 is
 begin
 	 y <= "0000" when (en='0') else
 			"0001" when (a="00") else
 			"0010" when (a="01") else
 			"0100" when (a="10") else
-			"1000" -- a="11"
-end cond_arch;
+			"1000"; -- a="11"
+end cond_arch32;
 
